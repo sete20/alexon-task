@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Authentication\Client;
 
 use App\Http\Controllers\Controller;
-use App\Responsibles\Client\ClientLogoutResponsable;
+use Responsibles\Authentication\Client\ClientLogoutResponable;
 use Illuminate\Http\Request;
 
 class ClientLogoutController extends Controller
@@ -11,8 +11,8 @@ class ClientLogoutController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, ClientLogoutResponsable $clientLogoutResponsable): Responsable
+    public function __invoke(Request $request, ClientLogoutResponable $clientLogoutResponable)
     {
-        return $clientLogoutResponsable->toResponse($request);
+        return $clientLogoutResponable->toResponse($request);
     }
 }

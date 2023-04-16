@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Authentication\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Responsibles\Admin\AdminLogoutResponsable;
+use Responsibles\Authentication\Admin\AdminLogoutResponable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Request;
 
@@ -12,8 +12,8 @@ class AdminLogoutController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, AdminLogoutResponsable $adminLogoutResponsable): Responsable
+    public function __invoke(Request $request, AdminLogoutResponable $adminLogoutResponable)
     {
-        return $adminLogoutResponsable->toResponse($request);
+        return $adminLogoutResponable->toResponse($request);
     }
 }

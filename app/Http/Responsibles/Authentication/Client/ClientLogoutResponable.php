@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Responsibles\Admin;
+namespace Responsibles\Authentication\Client;
 
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Facades\Auth;
 
-class AdminLogoutResponsable implements Responsable
+class ClientLogoutResponable implements Responsable
 {
 
     public function toResponse($request)

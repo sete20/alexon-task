@@ -1,18 +1,17 @@
 <?php
 
-
-namespace App\Responsibles\Admin;
+namespace Responsibles\Authentication\Admin;
 
 use App\Models\Admin;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Facades\Auth;
 
-class AdminLoginResponsable implements Responsable
+class AdminLoginResponable implements Responsable
 {
 
     public function toResponse($request)
     {
-        if (!Auth::attempt($request->only(['email', 'password']))) {
+        if (!Auth::guard('admin')->attempt($request->only(['email', 'password']))) {
             return response()->json([
                 'status' => false,
                 'message' => 'Email & Password does not match with our record.',

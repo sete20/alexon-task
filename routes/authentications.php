@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     route::post('login', AdminLoginController::class);
-    Route::post('logout', AdminLogoutController::class)->middleware('api:auth', 'admins_only');
+    Route::post('logout', AdminLogoutController::class)->middleware('auth:admin-api', 'admins_only');
 });
 Route::group(['prefix' => 'client', 'namespace' => 'Client'], function () {
     route::post('login', ClientLoginController::class);
-    route::post('login', ClientRegisterController::class);
-    Route::post('logout', ClientLogoutController::class)->middleware('api:auth', 'clients_only');
+    route::post('register', ClientRegisterController::class);
+    Route::post('logout', ClientLogoutController::class)->middleware('auth:client-api', 'clients_only');
 });

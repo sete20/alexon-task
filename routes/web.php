@@ -15,11 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // dd(User::get());
-    return User::create([
-        'name' => 'name',
-        'email' => 'email@email.com',
-        'password' => '123456'
-    ]);
     return view('welcome');
 });
